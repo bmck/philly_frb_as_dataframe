@@ -2,3 +2,4 @@
 
 require_relative "philly_frb_as_dataframe/version"
 require_relative "philly_frb_as_dataframe/partisan_conflict"
+require_relative "philly_frb_as_dataframe/survey_prof_forecasters"

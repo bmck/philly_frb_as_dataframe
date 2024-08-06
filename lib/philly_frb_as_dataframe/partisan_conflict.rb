@@ -1,8 +1,6 @@
 require 'polars-df'
 require 'httparty'
 require 'roo'
-require 'zlib'
-require 'stringio'
 require 'csv'
 
 module PhillyFrbAsDataframe

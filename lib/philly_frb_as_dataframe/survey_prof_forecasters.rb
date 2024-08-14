@@ -1,11 +1,10 @@
-require 'polars-tmp_df'
+require 'polars-df'
 require 'httparty'
 require 'roo'
 require 'csv'
 
 module PhillyFrbAsDataframe
   class SurveyProfForecasters
-    # Get data for the given name from the Bank of Canada.
 
     include ::HTTParty
 

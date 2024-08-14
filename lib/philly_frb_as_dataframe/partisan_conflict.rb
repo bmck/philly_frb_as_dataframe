@@ -5,7 +5,6 @@ require 'csv'
 
 module PhillyFrbAsDataframe
   class PartisanConflict
-    # Get data for the given name from the Bank of Canada.
 
     include ::HTTParty
 

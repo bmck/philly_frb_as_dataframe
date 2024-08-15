@@ -10,3 +10,4 @@
 Gemfile.lock
 .ruby-gemset
 .ruby-version
+.DS_Store

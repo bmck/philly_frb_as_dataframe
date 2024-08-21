@@ -23,8 +23,8 @@ module PhillyFrbAsDataframe
       df = {}; (0..(keys.length-1)).to_a.each{|i| df[keys[i]] = vals[i]}
 
       df = Polars::DataFrame.new(df)
-      df = df.filter(Polars.col('Timestamps_') <= fin.to_date) unless start.nil?
-      df = df.filter(Polars.col('Timestamps_') >= start.to_date) unless fin.nil?
+      df = df.filter(Polars.col('Timestamps_') <= fin.to_date) unless fin.nil?
+      df = df.filter(Polars.col('Timestamps_') >= start.to_date) unless start.nil?
       s = Polars::Series.new('Timestamps', df['Timestamps_'].to_a)
       df = df.insert_column(0,s).drop(['Month', 'Year', 'Timestamps_'])
 

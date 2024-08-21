@@ -26,8 +26,8 @@ module PhillyFrbAsDataframe
         tmp_df = {}; (0..(keys.length-1)).to_a.each{|i| tmp_df[keys[i]] = vals[i]}
 
         tmp_df = Polars::DataFrame.new(tmp_df).drop(['QUARTER', 'YEAR'])
-        tmp_df = tmp_df.filter(Polars.col('Timestamps_') <= fin.to_date) unless start.nil?
-        tmp_df = tmp_df.filter(Polars.col('Timestamps_') >= start.to_date) unless fin.nil?
+        tmp_df = tmp_df.filter(Polars.col('Timestamps_') <= fin.to_date) unless fin.nil?
+        tmp_df = tmp_df.filter(Polars.col('Timestamps_') >= start.to_date) unless start.nil?
 
         if h == hsh.first
           df = tmp_df

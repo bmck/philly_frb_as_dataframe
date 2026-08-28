@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Alternative economic and financial data from the Philadelphia FRB"
   spec.homepage      = "https://github.com/bmck/philly_frb_as_dataframe"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new("3.3.6")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.3")
 
 
   spec.metadata["homepage_uri"] = spec.homepage

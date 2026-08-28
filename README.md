@@ -28,7 +28,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-3.1.2 :001 > PhillyFrbAsDataframe::PartisanConflict.new.fetch
+3.3.6 :001 > PhillyFrbAsDataframe::PartisanConflict.new.fetch
  => 
 shape: (522, 2)                                                               
 ┌────────────┬───────────────────┐                                            
@@ -48,7 +48,7 @@ shape: (522, 2)
 │ 2024-05-01 ┆ 113.41            │
 │ 2024-06-01 ┆ 103.95            │
 └────────────┴───────────────────┘ 
-3.1.2 :002 > PhillyFrbAsDataframe::PartisanConflict.new.fetch(start: Date.new(2000,01,01), fin: Date.new(2020,12,31))
+3.3.6 :002 > PhillyFrbAsDataframe::PartisanConflict.new.fetch(start: Date.new(2000,01,01), fin: Date.new(2020,12,31))
  => 
 shape: (252, 2)                                                               
 ┌────────────┬───────────────────┐                                            
@@ -73,9 +73,9 @@ shape: (252, 2)
 and 
 
 ```ruby
-3.1.2 :001 > a = PhillyFrbAsDataframe::SurveyProfForecasters.new
+3.3.6 :001 > a = PhillyFrbAsDataframe::SurveyProfForecasters.new
  => #<PhillyFrbAsDataframe::SurveyProfForecasters:0x0000000106e18640> 
-3.1.2 :002 > a.fetch
+3.3.6 :002 > a.fetch
  => 
 shape: (223, 308)                    
 ┌────────────┬────────────┬────────────┬────────────┬───┬──────────────────┬──────────────────┬──────────────────┬──────────────────┐
@@ -95,11 +95,11 @@ shape: (223, 308)
 │ 2024-01-01 ┆ 27938.8105 ┆ 28234.0069 ┆ 28497.6187 ┆ … ┆ 3.1199           ┆ 2.983            ┆ 2.692            ┆ 2.4174           │
 │ 2024-04-01 ┆ 28284.4998 ┆ 28625.8758 ┆ 28944.1106 ┆ … ┆ 2.5017           ┆ 2.6019           ┆ 2.4432           ┆ 2.1863           │
 └────────────┴────────────┴────────────┴────────────┴───┴──────────────────┴──────────────────┴──────────────────┴──────────────────┘ 
-3.1.2 :003 > Polars::Config.set_tbl_rows(-1)
+3.3.6 :003 > Polars::Config.set_tbl_rows(-1)
  => Polars::Config 
-3.1.2 :004 > Polars::Config.set_tbl_cols(-1)
+3.3.6 :004 > Polars::Config.set_tbl_cols(-1)
  => Polars::Config 
-3.1.2 :005 > a.fetch
+3.3.6 :005 > a.fetch
  => 
 shape: (223, 308)                                           
 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
@@ -117,11 +117,11 @@ shape: (223, 308)
 
 (...snip...)
 
-3.1.2 :006 > b = a.fetch
+3.3.6 :006 > b = a.fetch
  => 
 shape: (223, 308)        
 ...                      
-3.1.2 :007 > b.columns
+3.3.6 :007 > b.columns
  => 
 ["Timestamps",                                 
  "NGDP1",                                      
@@ -147,7 +147,7 @@ shape: (223, 308)
  "RR3_TBILL_CPCE_3",
  "RR3_TBILL_CPCE_4",
  "RR3_TBILL_CPCE_5"] 
-3.1.2 :008 >  b['Timestamps']
+3.3.6 :008 >  b['Timestamps']
  => 
 shape: (223,)             
 Series: 'Timestamps' [date]
@@ -186,6 +186,25 @@ No GitHub Actions or CI workflows are configured for this project.
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Testing
+
+This gem includes a comprehensive test suite using Minitest. Tests use webmock to stub HTTP requests, ensuring no live network calls are made during testing.
+
+To run the test suite:
+
+```bash
+bundle install
+bundle exec rake test
+```
+
+The test suite covers:
+- `PartisanConflict#fetch` - fetching and parsing partisan conflict index data
+- `SurveyProfForecasters#fetch` - fetching and parsing survey of professional forecasters data
+- Date filtering with `start` and `fin` parameters
+- DataFrame structure and column validation
+
+All HTTP requests are mocked using webmock with xlsx fixtures stored in `test/fixtures/`.
 
 ## Contributing
 

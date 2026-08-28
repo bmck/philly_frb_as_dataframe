@@ -173,6 +173,25 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Testing
+
+This gem includes a comprehensive test suite using Minitest. Tests use webmock to stub HTTP requests, ensuring no live network calls are made during testing.
+
+To run the test suite:
+
+```bash
+bundle install
+bundle exec rake test
+```
+
+The test suite covers:
+- `PartisanConflict#fetch` - fetching and parsing partisan conflict index data
+- `SurveyProfForecasters#fetch` - fetching and parsing survey of professional forecasters data
+- Date filtering with `start` and `fin` parameters
+- DataFrame structure and column validation
+
+All HTTP requests are mocked using webmock with xlsx fixtures stored in `test/fixtures/`.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/philly_frb_as_dataframe. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/philly_frb_as_dataframe/blob/main/CODE_OF_CONDUCT.md).

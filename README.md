@@ -4,6 +4,10 @@ Up to date remote economic data access for ruby, using Polars dataframes.
 
 This package will fetch economic and financial information from the Federal Reserve Bank of Philadelphia, and return the results as a Polars dataframe.  For details regarding the data available from the Philadelphia FRB, see https://www.philadelphiafed.org/surveys-and-data .  This gem exposes the Partisan Conflict Index (see https://www.philadelphiafed.org/surveys-and-data/macroeconomic-data/partisan-conflict-index) and the Survey of Professional Forecasters (see https://www.philadelphiafed.org/-/media/frbp/assets/surveys-and-data/survey-of-professional-forecasters/spf-documentation.pdf).
 
+## Requirements
+
+- Ruby >= 3.3
+- polars-df 0.27.1
 
 ## Installation
 
@@ -23,7 +27,7 @@ Or install it yourself as:
 
 ## Usage
 
-```{ruby}
+```ruby
 3.3.6 :001 > PhillyFrbAsDataframe::PartisanConflict.new.fetch
  => 
 shape: (522, 2)                                                               
@@ -68,7 +72,7 @@ shape: (252, 2)
 
 and 
 
-```{ruby}
+```ruby
 3.3.6 :001 > a = PhillyFrbAsDataframe::SurveyProfForecasters.new
  => #<PhillyFrbAsDataframe::SurveyProfForecasters:0x0000000106e18640> 
 3.3.6 :002 > a.fetch
@@ -166,6 +170,16 @@ Series: 'Timestamps' [date]
     2024-04-01
 ] 
 ```
+
+## Testing
+
+Tests use minitest with mocked XLSX files and WebMock for network requests. Run tests with:
+
+```bash
+bundle exec rake test
+```
+
+No GitHub Actions or CI workflows are configured for this project.
 
 ## Development
 
